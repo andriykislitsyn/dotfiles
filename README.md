@@ -9,12 +9,12 @@ zsh/          Shell configuration (Powerlevel10k, lazy-loading, aliases)
 git/          Git aliases, delta pager, GPG signing
 claude-code/  Claude Code: CLAUDE.md, settings.json, output style, /orient, skills
 scripts/      Utility scripts (linting, automation)
-posts/        Short write-ups on specific setup decisions
+posts/        Pointers to the setup notes, now on Agentic Engineering
 ```
 
 ## Highlights
 
-**Shell startup in ~140ms** — down from 5+ seconds. The main wins were lazy-loading NVM and virtualenvwrapper (they eagerly initialize on every shell, even when unused) and deduplicating `compinit` calls. Details in [posts/zshrc-from-5s-to-140ms.md](posts/zshrc-from-5s-to-140ms.md).
+**Shell startup in ~140ms** — down from 5+ seconds. The main wins were lazy-loading NVM and virtualenvwrapper (they eagerly initialize on every shell, even when unused) and deduplicating `compinit` calls. Details in [Shell startup: from 5s to 140ms](https://andriykislitsyn.github.io/agentic-engineering/articles/zshrc-from-5s-to-140ms/).
 
 **Lazy-load pattern** — NVM, virtualenvwrapper, and other heavy tools are wrapped in shell functions that replace themselves on first call:
 
@@ -36,9 +36,9 @@ First `nvm` call loads the real thing; every subsequent call is native speed.
 
 ## Posts
 
-- [Shell startup: from 5s to 140ms](posts/zshrc-from-5s-to-140ms.md) — lazy-loading NVM/virtualenvwrapper, deduplicating compinit
-- [Zsh setup with Oh My Zsh](posts/zsh-setup-with-oh-my-zsh.md) — Powerlevel10k, plugins, modern CLI replacements, full walkthrough
-- [Signed Git commits with GPG](posts/signed-git-commits.md) — why and how to sign every commit
+- [Shell startup: from 5s to 140ms](https://andriykislitsyn.github.io/agentic-engineering/articles/zshrc-from-5s-to-140ms/) — lazy-loading NVM/virtualenvwrapper, deduplicating compinit
+- [Zsh setup with Oh My Zsh](https://andriykislitsyn.github.io/agentic-engineering/articles/zsh-setup-with-oh-my-zsh/) — Powerlevel10k, plugins, modern CLI replacements, full walkthrough
+- [Signed Git commits with GPG](https://andriykislitsyn.github.io/agentic-engineering/articles/signed-git-commits/) — why and how to sign every commit
 - [How I set up Claude Code](https://andriykislitsyn.github.io/agentic-engineering/articles/how-i-set-up-claude-code/) — permissions, output style, CLAUDE.md, and skills, each rule where it gets enforced
 
 ## Setup
