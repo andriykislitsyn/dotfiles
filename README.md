@@ -39,7 +39,7 @@ First `nvm` call loads the real thing; every subsequent call is native speed.
 - [Shell startup: from 5s to 140ms](posts/zshrc-from-5s-to-140ms.md) — lazy-loading NVM/virtualenvwrapper, deduplicating compinit
 - [Zsh setup with Oh My Zsh](posts/zsh-setup-with-oh-my-zsh.md) — Powerlevel10k, plugins, modern CLI replacements, full walkthrough
 - [Signed Git commits with GPG](posts/signed-git-commits.md) — why and how to sign every commit
-- [How I set up Claude Code](posts/claude-code-setup.md) — CLAUDE.md, plugins, skills, permissions, and workflow
+- [How I set up Claude Code](https://andriykislitsyn.github.io/agentic-engineering/articles/how-i-set-up-claude-code/) — permissions, output style, CLAUDE.md, and skills, each rule where it gets enforced
 
 ## Setup
 
