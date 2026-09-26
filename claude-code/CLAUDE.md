@@ -19,6 +19,7 @@ In this file "I", "me", "my" refer to the user (Andrii). "You" refers to Claude.
 
 - Use `gh` for all GitHub operations (PRs, issues, repos, checks, releases). Examples: `gh pr view <number>`, `gh search prs --author=@me --state=open`, `gh api repos/org/repo/pulls`.
 - My terminal's cwd is usually the main repo, not whatever repo a command targets. Every handed-off `gh pr`/`gh issue` command needs an explicit `-R <owner>/<repo>` so it works regardless of cwd; for `gh pr create` also pass `-H <branch>` (the branch must already be pushed, so this only works after the push step) instead of relying on cwd to detect the current branch.
+- Failed PR checks: `gh` covers GitHub Actions checks. For Harness-backed checks, use the `harness` skill with the check's Harness execution URL to get status, failed tests, and logs.
 - Extract JSON with `gh api <endpoint> --jq '<filter>'`, never a pipe. `--jq` keeps it one allowlisted command; `gh api ... | python3 -c ...` adds a second, non-allowlisted command that prompts every time. `--jq` takes full jq syntax, and `gh api graphql -f query='...' --jq '...'` covers GraphQL. Pipe to another processor only when the transform exceeds jq.
 
 ### Workspace layout
@@ -214,4 +215,4 @@ Automation sets reviewers and review labels on my PRs, so never add either, and 
 - Draft the text and show it to me. "Reply to this comment" or "act on this feedback" means implement the fix and draft the reply; posting needs its own explicit go-ahead. For Slack, prepare with `slack_send_message_draft`.
 - Automated review comments (Cursor Bugbot and the like) are the exception: they resolve their own comments once the finding is fixed, so a reply is noise. Verify the finding, fix it, and report to me in chat. Draft a reply only when we're rejecting their reasoning, or when the fix departs from what they asked for and the difference wouldn't be obvious from the diff.
 - Even after go-ahead, the `gh` posting commands are permission-denied here. Write the approved text to a scratch file and hand me the command: `gh pr comment -R <owner>/<repo> <number> --body-file <path>` or `gh pr edit -R <owner>/<repo> <number> --body-file <path>`.
-- Slack access comes from the `claude.ai Slack` MCP connector, enabled in claude.ai connector settings, not from Claude Code. If the tools are missing, tell me to enable it there.
+- Slack access comes from the `claude.ai Slack` MCP connector, enabled in claude.ai connector settings, not from Claude Code. If the tools are missing, tell me to enable it there. Use the `slack` skill for reading and searching (pasted links, "check Slack", "read that thread"); it parses links into channel_id/message_ts and picks the tool.
