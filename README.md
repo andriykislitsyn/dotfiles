@@ -7,7 +7,7 @@ My development environment configuration. macOS, zsh, and the tools I use daily 
 ```
 zsh/          Shell configuration (Powerlevel10k, lazy-loading, aliases)
 git/          Git aliases, delta pager, GPG signing
-claude-code/  Claude Code global instructions and configuration
+claude-code/  Claude Code: CLAUDE.md, settings.json, output style, /orient, skills
 scripts/      Utility scripts (linting, automation)
 posts/        Short write-ups on specific setup decisions
 ```
